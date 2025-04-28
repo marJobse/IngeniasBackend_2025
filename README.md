@@ -5,6 +5,7 @@ Curso de Backend 2025 - Ingenias + YPF
 TrailerfLix es una aplicación que permite la gestión de peliculas y series mediante una API RESTful. La aplicación se ha desarrollado siguiendo prácticas modernas de backend, incluyendo la configuración de servidores web, conexión a bases de datos, gestión de la seguridad y pruebas.
 
 🛠️ Tecnologías y Contenidos Utilizados
+
 El proyecto integra los conocimientos obtenidos en los tres módulos del curso:
 
 Primer Módulo:
