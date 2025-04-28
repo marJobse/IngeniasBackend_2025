@@ -1,7 +1,7 @@
 # Curso de Backend 2025 - Ingenias + YPF
 
-#TrailerfLix 🚀🎬
-
+TrailerfLix 🚀🎬
+--
 Bienvenidas a la aplicación de Backend para la web de TrailerfLix. Este repositorio forma parte del curso IngeniasBackend_2025 y es el resultado del esfuerzo colaborativo del Grupo 4. ¡Disfruta explorando el proyecto! 😄
 
 ---
@@ -41,11 +41,11 @@ El proyecto integra los conocimientos obtenidos en los tres módulos del curso:
 
 👩‍💻 Integrantes del Grupo
 
-  • Mariana Jobse
-  
-  • Valeria Durruty
-  
-  • Miriam Cabrera
+        • Mariana Jobse
+        
+        • Valeria Durruty
+        
+        • Miriam Cabrera
 
 Somos el Grupo 4, comprometidas con un trabajo colaborativo y de alta calidad.
 
@@ -54,16 +54,16 @@ Somos el Grupo 4, comprometidas con un trabajo colaborativo y de alta calidad.
 🔍 Funcionalidades Principales
 
 • API RESTful: 
-Permite la interacción con los contenidos de TrailerfLix mediante endpoints bien definidos.
+      Permite la interacción con los contenidos de TrailerfLix mediante endpoints bien definidos.
 
 • Gestión de Base de Datos:
-Integración con bases de datos tanto no relacionales como SQL para cubrir diversos requerimientos de almacenamiento.
+      Integración con bases de datos tanto no relacionales como SQL para cubrir diversos requerimientos de almacenamiento.
 
 • Seguridad:
-Implementación de mecanismos de autenticación y autorización para proteger la información sensible.
+      Implementación de mecanismos de autenticación y autorización para proteger la información sensible.
 
 • Testing:
-Pruebas unitarias y de integración para garantizar la calidad y estabilidad de la aplicación.
+      Pruebas unitarias y de integración para garantizar la calidad y estabilidad de la aplicación.
 
 ---
 
