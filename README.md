@@ -1,6 +1,6 @@
 # Curso de Backend 2025 - Ingenias + YPF
 
-##TrailerfLix 🚀🎬
+#TrailerfLix 🚀🎬
 
 Bienvenidas a la aplicación de Backend para la web de TrailerfLix. Este repositorio forma parte del curso IngeniasBackend_2025 y es el resultado del esfuerzo colaborativo del Grupo 4. ¡Disfruta explorando el proyecto! 😄
 
@@ -12,30 +12,31 @@ TrailerfLix es una aplicación que permite la gestión de peliculas y series med
 ---
 
 🛠️ Tecnologías y Contenidos Utilizados
+
 El proyecto integra los conocimientos obtenidos en los tres módulos del curso:
 
 1. Primer Módulo:
 
-  • Servidores Web 🌐
-
-  • API RESTful 🔄
+      • Servidores Web 🌐
+    
+      • API RESTful 🔄
 
 2. Segundo Módulo:
 
-  • Bases de Datos No Relacionales 📂
-  
-  • Seguridad 🔐
-  
-  • Operaciones CRUD (Crear, Leer, Actualizar, Eliminar) 📝  
+      • Bases de Datos No Relacionales 📂
+      
+      • Seguridad 🔐
+      
+      • Operaciones CRUD (Crear, Leer, Actualizar, Eliminar) 📝  
 
 3. Tercer Módulo:
 
-  • SQL 🗄️
-  
-  • Documentación 📖
-  
-  • Testing ✔️
-  
+      • SQL 🗄️
+      
+      • Documentación 📖
+      
+      • Testing ✔️
+      
 ---
 
 👩‍💻 Integrantes del Grupo
