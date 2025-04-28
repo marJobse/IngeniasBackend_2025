@@ -68,6 +68,7 @@ Somos el Grupo 4, comprometidas con un trabajo colaborativo y de alta calidad.
 ---
 
 ✨ Agradecimientos
+
 Gracias al equipo docente del curso IngeniasBackend_2025 por brindarnos las herramientas necesarias para realizar este proyecto, y a todas las integrantes del Grupo 4 por su esfuerzo y compromiso. ¡Seguimos innovando! 💡
 
 ¡Esperamos que este proyecto sirva como una herramienta útil para aprender y crecer en el desarrollo backend!
