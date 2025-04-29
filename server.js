@@ -16,6 +16,7 @@ const trailerData = fs.readFileSync("database/trailerflix.json", "utf-8");
 
 // Convertir el contenido (string) a objeto
 const trailerflix = JSON.parse(trailerData);
+//console.log("catalogo trailerflix ", trailerflix);
 
 //http://localhost:3008/catalogo
 app.get("/catalogo", (req, res) => {
