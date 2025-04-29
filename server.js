@@ -9,6 +9,7 @@ dotenv.config();
 
 const PORT = process.env.PORT || 3000;
 
+<<<<<<< HEAD
 app.use(express.static(path.join(__dirname, "trailerflix_grupo4")));
 
 // Leer el archivo de forma síncrona
@@ -49,6 +50,8 @@ app.get("/titulo/:title", (req, res) => {
   res.json(data);
 });
 
+=======
+>>>>>>> f4382bc30fb5ce8eda3088dd98e97d542785d567
 // Manejo de rutas inexistentes
 app.use((req, res) => {
   res.json({
