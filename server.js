@@ -58,22 +58,23 @@ app.get('/categoria/:cat', (req, res) => {
   //console.log(cat);
   const resultado = trailerflix.filter(trailerflix => trailerflix.categoria.toLowerCase() === cat);
   //console.log(resultado);
+  let data = {};
 
   if (resultado.length === 0) {
-    const data ={
-      title: 'Error 404',
-      message: 'La búsqueda de la categoría ' + cat + ' no arrojo resultados. Debe buscar una de las dos categorías válidas: película o serie.'
+    data ={
+      title: 'Búsqueda por categoría',
+      message: 'La búsqueda de la categoría ' + cat + ' no arrojo resultados.',
+      cat
     };
-    res.render('error_404', data);
   } else {
-    const data = {
+    data = {
       title: 'Búsqueda por categoría',
       message: 'Listado de resultados para: '+ cat,
       cat,
       resultado
     };
-    res.render('categoria', data);
-  }
+  };
+  res.render('categoria', data);
 });
 
 // Manejo de rutas inexistentes
