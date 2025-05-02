@@ -63,7 +63,7 @@ app.get('/categoria/:cat', (req, res) => {
   if (resultado.length === 0) {
     data ={
       title: 'Búsqueda por categoría',
-      message: 'La búsqueda de la categoría ' + cat + ' no arrojo resultados.',
+      message: 'La búsqueda de la categoría ' + cat + ' no arrojó resultados.',
       cat
     };
   } else {
