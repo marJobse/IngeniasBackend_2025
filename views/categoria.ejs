@@ -1,0 +1,45 @@
+<%- include('./includes/header') %>
+
+<div class="container">
+    <img src="/img/cinema.png" alt="Pop Corn and movie" class="img-fluid" style="height: 80px; float: left; margin-right: 20px; margin-top: 20px; margin-bottom: 20px;">
+    <h1 class="text-center"><%= title %></h1>
+    <h2 class="text-center"><%= message %></h2>
+    <table class="table table-hover">
+        <tr>
+            <th>Id</th>
+            <th>Poster</th>
+            <th>Título</th>
+            <th>Género</th>
+            <th>Tags</th>
+            <th>Resumen</th>
+            <% if (cat === 'serie') { %>
+                <th>Temporadas</th>
+            <% } else { %>
+                <th>Duración</th>
+            <% } %>
+            <th>Reparto</th>
+            <th>Trailer</th>
+        </tr>
+        <% for (let i = 0; i < resultado.length; i++) { %>
+            <tr>
+                <td><%= resultado[i].id %> </td>
+                <td>$ <%= resultado[i].poster %></td>
+                <td><%= resultado[i].titulo %></td>
+                <td><%= resultado[i].genero %></td>
+                <td><%= resultado[i].tags %></td>
+                <td><%= resultado[i].resumen %></td>
+                <% if (cat === 'serie') { %>
+                    <td><%= resultado[i].temporadas %></td>
+                <% } else { %>
+                    <td><%= resultado[i].duracion %></td>
+                <% } %>
+                <td><%= resultado[i].reparto %></td>
+                <td><a href="<%= resultado[i].trailer %>"" target="_blank">Trailer</td>
+            </tr>
+        <% } %>
+    </table>
+</div>
+
+<%- include('./includes/footer') %>
+</body>
+</html>
