@@ -4,7 +4,6 @@
     <img src="/img/cinema.png" alt="Pop Corn and movie" class="img-fluid" style="height: 80px; float: left; margin-right: 20px; margin-top: 20px; margin-bottom: 20px;">
     <h1 class="text-center"><%= title %></h1>
     <h3 class="text-center"><%= message %></h3>
-    <% if (cat === 'serie' || cat === 'película') { %>
     <table class="table table-hover">
         <tr>
             <th>Id</th>
@@ -39,7 +38,6 @@
             </tr>
         <% } %>
     </table>
-    <% } %>
 </div>
 
 <%- include('./includes/footer') %>

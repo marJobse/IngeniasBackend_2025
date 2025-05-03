@@ -63,8 +63,7 @@ app.get('/categoria/:cat', (req, res) => {
   if (resultado.length === 0) {
     data ={
       title: 'Error 404',
-      message: 'La categoría ' + cat + ' no existe o está vacía.',
-      cat
+      message: 'La categoría ' + cat + ' no existe o está vacía.'
     };
     res.render('error_404', data);
   } else {
