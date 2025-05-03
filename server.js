@@ -62,10 +62,11 @@ app.get('/categoria/:cat', (req, res) => {
 
   if (resultado.length === 0) {
     data ={
-      title: 'Búsqueda por categoría',
-      message: 'La búsqueda de la categoría ' + cat + ' no arrojó resultados.',
+      title: 'Error 404',
+      message: 'La categoría ' + cat + ' no existe o está vacía.',
       cat
     };
+    res.render('error_404', data);
   } else {
     data = {
       title: 'Búsqueda por categoría',
@@ -73,8 +74,8 @@ app.get('/categoria/:cat', (req, res) => {
       cat,
       resultado
     };
+    res.render('categoria', data);
   };
-  res.render('categoria', data);
 });
 
 // Manejo de rutas inexistentes
