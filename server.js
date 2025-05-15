@@ -1,4 +1,4 @@
-const express = require("express");
+const express = requiere("express");
 const app = express();
 const path = require("path");
 const dotenv = require("dotenv");
@@ -19,6 +19,51 @@ const trailerData = fs.readFileSync("database/trailerflix.json", "utf-8");
 // Convertir el contenido (string) a objeto
 const trailerflix = JSON.parse(trailerData);
 //console.log("catalogo trailerflix ", trailerflix);
+
+
+// Ruta raíz 
+app.get("/", (req, res) => {
+  res.send(`
+    <p>👋 Bienvenida en la Raíz ("/").</p>
+    <p>🔗 Endpoint <a href="/reparto/actriz">/reparto/:act</a></p>
+    <p>🔗 Endpoint <a href="/trailer/1">/trailer/:id</a></p>
+  `);
+});
+
+//http://localhost:3008/reparto
+app.get("/reparto/:act", (req, res) => {
+  const actorBuscado = req.params.act.trim().toLowerCase();
+  const resultados = trailerflix.filter(item =>
+    item.reparto && item.reparto.toLowerCase().includes(actorBuscado)
+  );
+
+  if (resultados.length > 0) {
+    res.json(resultados.map(p => ({
+      id: p.id,
+      titulo: p.titulo,
+      reparto: p.reparto
+    })));
+  } else {
+    res.status(404).json({ mensaje: 'Actor no encontrado.' });
+  }
+});
+
+//http://localhost:3008/trailer
+app.get("/trailer/:id", (req, res) => {
+  const id = parseInt(req.params.id);
+  const resultado = trailerflix.find(item => item.id === id);
+
+  if (resultado) {
+    res.json({
+      id: resultado.id,
+      titulo: resultado.titulo,
+      trailer: resultado.trailer
+    });
+  } else {
+    res.status(404).json({ mensaje: 'Película o serie no encontrada.' });
+  }
+});
+
 
 //http://localhost:3008/catalogo
 app.get("/catalogo", (req, res) => {
