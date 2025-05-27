@@ -1,4 +1,4 @@
-const express = requiere("express");
+const express = require("express");
 const app = express();
 const path = require("path");
 const dotenv = require("dotenv");
@@ -9,9 +9,9 @@ dotenv.config();
 
 const PORT = process.env.PORT || 3000;
 
-app.use(express.static(path.join(__dirname, 'public')));
-app.set('view engine', 'ejs');
-app.use(express.static('views'));
+app.use(express.static(path.join(__dirname, "public")));
+app.set("view engine", "ejs");
+app.use(express.static("views"));
 
 // Leer el archivo de forma síncrona
 const trailerData = fs.readFileSync("database/trailerflix.json", "utf-8");
@@ -20,8 +20,7 @@ const trailerData = fs.readFileSync("database/trailerflix.json", "utf-8");
 const trailerflix = JSON.parse(trailerData);
 //console.log("catalogo trailerflix ", trailerflix);
 
-
-// Ruta raíz 
+// Ruta raíz
 app.get("/", (req, res) => {
   res.send(`
     <p>👋 Bienvenida en la Raíz ("/").</p>
@@ -33,37 +32,38 @@ app.get("/", (req, res) => {
 //http://localhost:3008/reparto
 app.get("/reparto/:act", (req, res) => {
   const actorBuscado = req.params.act.trim().toLowerCase();
-  const resultados = trailerflix.filter(item =>
-    item.reparto && item.reparto.toLowerCase().includes(actorBuscado)
+  const resultados = trailerflix.filter(
+    (item) => item.reparto && item.reparto.toLowerCase().includes(actorBuscado)
   );
 
   if (resultados.length > 0) {
-    res.json(resultados.map(p => ({
-      id: p.id,
-      titulo: p.titulo,
-      reparto: p.reparto
-    })));
+    res.json(
+      resultados.map((p) => ({
+        id: p.id,
+        titulo: p.titulo,
+        reparto: p.reparto,
+      }))
+    );
   } else {
-    res.status(404).json({ mensaje: 'Actor no encontrado.' });
+    res.status(404).json({ mensaje: "Actor no encontrado." });
   }
 });
 
 //http://localhost:3008/trailer
 app.get("/trailer/:id", (req, res) => {
   const id = parseInt(req.params.id);
-  const resultado = trailerflix.find(item => item.id === id);
+  const resultado = trailerflix.find((item) => item.id === id);
 
   if (resultado) {
     res.json({
       id: resultado.id,
       titulo: resultado.titulo,
-      trailer: resultado.trailer
+      trailer: resultado.trailer,
     });
   } else {
-    res.status(404).json({ mensaje: 'Película o serie no encontrada.' });
+    res.status(404).json({ mensaje: "Película o serie no encontrada." });
   }
 });
-
 
 //http://localhost:3008/catalogo
 app.get("/catalogo", (req, res) => {
@@ -97,41 +97,42 @@ app.get("/titulo/:title", (req, res) => {
 });
 
 // Endpoint Categoría
-app.get('/categoria/:cat', (req, res) => {
-  
+app.get("/categoria/:cat", (req, res) => {
   const cat = req.params.cat.trim().toLowerCase();
   //console.log(cat);
-  const resultado = trailerflix.filter(trailerflix => trailerflix.categoria.toLowerCase() === cat);
+  const resultado = trailerflix.filter(
+    (trailerflix) => trailerflix.categoria.toLowerCase() === cat
+  );
   //console.log(resultado);
   let data = {};
 
   if (resultado.length === 0) {
-    data ={
-      title: 'Error 404',
-      message: 'La categoría ' + cat + ' no existe o está vacía.'
+    data = {
+      title: "Error 404",
+      message: "La categoría " + cat + " no existe o está vacía.",
     };
-    res.render('error_404', data);
+    res.render("error_404", data);
   } else {
     data = {
-      title: 'Búsqueda por categoría',
-      message: 'Listado de resultados para: '+ cat,
+      title: "Búsqueda por categoría",
+      message: "Listado de resultados para: " + cat,
       cat,
-      resultado
+      resultado,
     };
-    res.render('categoria', data);
-  };
+    res.render("categoria", data);
+  }
 });
 
 // Manejo de rutas inexistentes
 app.use((req, res) => {
   const data = {
-    title: 'Error 404',
-    message: 'No se encuentra la ruta o el recurso solicitado.'
+    title: "Error 404",
+    message: "No se encuentra la ruta o el recurso solicitado.",
   };
-  res.render('error_404', data);
+  res.render("error_404", data);
 });
 
 // Configuración del servidor
 app.listen(PORT, () => {
-  console.log('Servidor iniciando en http://localhost:' + PORT);
+  console.log("Servidor iniciando en http://localhost:" + PORT);
 });
